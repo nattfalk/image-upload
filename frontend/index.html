@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Image upload JS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="js/imagedrop.js"></script>
+    <style>
+      div.drop-target {
+        width: 100px;
+        height: 100px;
+      }
+
+      div.drop-target > img {
+        width: 100px;
+        height: 100px;
+
+        opacity: 1;
+
+        -webkit-transition: opacity 0.2s linear;
+        -moz-transition: opacity 0.2s linear;
+        -ms-transition: opacity 0.2s linear;
+        -o-transition: opacity 0.2s linear;
+        transition: opacity 0.2s linear;
+      }
+
+      div.drop-target .imagedrop-drag-active {
+        opacity: 0.5;
+
+        -webkit-transition: opacity 0.2s linear;
+        -moz-transition: opacity 0.2s linear;
+        -ms-transition: opacity 0.2s linear;
+        -o-transition: opacity 0.2s linear;
+        transition: opacity 0.2s linear;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <div
+      id="drop-target"
+      ondragover="dragOver(event);"
+      ondrop="dropFile(event);"
+      ondragenter="dragEnter(event);"
+      ondragend="dragEnd(event)"
+      ondragleave="dragEnd(event)"
+    >
+      <img src="images/photo_placeholder.png" onclick="inputFileClick();" />
+
+      <input
+        id="inp-test"
+        type="file"
+        name="file"
+        accept=".png,.jpg,.jpeg"
+        oninput="postFile(this.files[0]);"
+        style="display: none;"
+      />
+    </div>
+    <hr /> -->
+    <h4>Drop 1</h4>
+    <div id="drop1" class="drop-target"></div>
+    <hr />
+    <h4>Drop 2</h4>
+    <div id="drop2" class="drop-target"></div>
+    <hr />
+    <h4>Drop 3</h4>
+    <div id="drop3" class="drop-target"></div>
+
+    <script>
+      let imgDrop = new ImageDrop({
+        endPoint: "http://localhost:8080/upload",
+        imageId: "1",
+        dropElement: document.querySelector("#drop1"),
+        placeholderImage: "images/photo_placeholder.png"
+      });
+
+      let imgDrop2 = new ImageDrop({
+        endPoint: "http://localhost:8080/upload",
+        imageId: "2",
+        dropElement: document.querySelector("#drop2"),
+        placeholderImage: "images/photo_placeholder.png"
+      });
+
+      let imgDrop2 = new ImageDrop({
+        endPoint: "http://localhost:8080/upload",
+        imageId: "3",
+        dropElement: document.querySelector("#drop3"),
+        placeholderImage: "images/photo_placeholder.png"
+      });
+    </script>
+  </body>
+</html>

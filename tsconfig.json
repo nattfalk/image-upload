@@ -1,0 +1,9 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "target": "ES5",
+    "sourceMap": false,
+    "outDir": "frontend/js"
+  },
+  "include": ["frontend/ts/"]
+}
